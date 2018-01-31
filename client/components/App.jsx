@@ -1,6 +1,12 @@
 // import 'babel-polyfill';
 import React, { Component } from 'react';
 import styled, { injectGlobal } from 'styled-components';
+import { connect } from 'react-redux';
+
+import axios from 'axios';
+
+import RequestButton from './RequestButton';
+import Api from '../api/index.js';
 
 injectGlobal`
   body {
@@ -27,17 +33,41 @@ const Container = styled.div`
   height: calC(100vh);
 `;
 
-const ConnectButton = styled.button`
-`;
+class App extends Component {
 
-export default class App extends Component {
+  handleRequest = result => {
+    const {
+      onFindBulbs
+    } = this.props;
+
+    Api.getBulbs({
+      brightness: 100
+    });
+
+    onFindBulbs('test6');
+  }
 
   render() {
+    const {
+      store
+    } = this.props;
 
     return (
       <Container> 
-        <ConnectButton>Connect</ConnectButton>
+        <RequestButton request={ this.handleRequest }/>
       </Container>
     );
   }
 }
+
+export default connect(
+  state => ({
+    store: state
+  }),
+  dispatch => ({
+    onFindBulbs: bulbs => dispatch({
+      type: 'ADD_BULBS',
+      payload: bulbs
+    })
+  })
+)(App);
