@@ -1,0 +1,41 @@
+{
+  "name": "yeelight-web-interface",
+  "version": "1.0.0",
+  "description": "web interface for yeelight smart bulb",
+  "main": "index.js",
+  "scripts": {
+    "server": "node bin/dev",
+    "start": "parcel ./client/index.html",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeniorCarnivore/yeelight-web-inteface.git"
+  },
+  "keywords": [
+    "react",
+    "node",
+    "yeelight"
+  ],
+  "author": "SeniorCarnivore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeniorCarnivore/yeelight-web-inteface/issues"
+  },
+  "homepage": "https://github.com/SeniorCarnivore/yeelight-web-inteface#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react-app": "^3.1.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "parcel-bundler": "^1.5.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "styled-components": "^3.1.4"
+  }
+}
